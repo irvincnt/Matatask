@@ -3,6 +3,7 @@ import React, { FC, useContext, useMemo } from "react";
 import { EntriesContext } from "../../context/entries";
 import { EntryStatus } from "../../interfaces";
 import { EntryCard } from "./EntryCard";
+import styles from './EntryList.module.css';
 
 interface Props {
   status: EntryStatus;
@@ -17,9 +18,10 @@ export const EntryList: FC<Props> = ({ status }) => {
   return (
     <div>
       <Paper
+        className={ styles.scrollbar }
         sx={{
           height: "calc(100vh - 160px)",
-          overflow: "scroll",
+          overflowY: "scroll",
           backgroundColor: "transparent",
         }}
       >

@@ -31,6 +31,48 @@ const Entries_INITIAL_STATE: EntriesState = {
   },
   {
     _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
+    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
+    status: 'in-progress',
+    createAt: Date.now()
+  },
+  {
+    _id: '32456-6457-43566',
     description: 'finished - Magna ullamco tempor minim nostrud nostrud consequat deserunt ea dolor.',
     status: 'finished',
     createAt: Date.now()

@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <Grid item xs={12} sm={4}>
           <Card sx={{ height: 'calc(100vh - 100px)'}}>
             <CardHeader title="Completadas"></CardHeader>
-            <EntryList status='pending'></EntryList>
+            <EntryList status='finished'></EntryList>
           </Card>
         </Grid>
 

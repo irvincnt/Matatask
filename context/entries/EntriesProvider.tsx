@@ -12,67 +12,31 @@ export interface Props {
 
 const Entries_INITIAL_STATE: EntriesState = {
   entries: [{
-    _id: '32456-6457-43566',
+    _id: Date.now() * 1,
     description: 'pending - Aliquip mollit consectetur cillum ad elit officia excepteur qui velit nostrud id esse laboris occaecat.',
     status: 'pending',
     createAt: Date.now()
   },
   {
-    _id: '32456-6457-43566',
+    _id: Date.now() * 2,
     description: 'in-progress - Quis sint consequat culpa minim.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: '32456-6457-43566',
+    _id: Date.now() * 3,
     description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: '32456-6457-43566',
+    _id: Date.now() * 4,
     description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
-    description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
-    status: 'in-progress',
-    createAt: Date.now()
-  },
-  {
-    _id: '32456-6457-43566',
+    _id: Date.now() * 5,
     description: 'finished - Magna ullamco tempor minim nostrud nostrud consequat deserunt ea dolor.',
     status: 'finished',
     createAt: Date.now()
@@ -81,10 +45,23 @@ const Entries_INITIAL_STATE: EntriesState = {
 
 export const EntriesProvider:FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(EntriesReducer, Entries_INITIAL_STATE)
+
+  const addNewEntry = ( description: string ) => {
+    const newEntry:Entry = {
+      _id: Date.now(),
+      description,
+      status: 'pending',
+      createAt: Date.now()
+    }
+
+    dispatch({type:'[Entries] - New entry', payload: newEntry });
+  }
+
   return (
     <EntriesContext.Provider
       value={{
-        ...state
+        ...state,
+        addNewEntry
       }}
     >
       {children}

@@ -28,7 +28,7 @@ export const UIProvider:FC<Props> = ({ children }) => {
 
   const setIsAddingEntry = ( isAdding: boolean ) => {
     dispatch({type:'UI - Set isAddingEntry', payload: isAdding });
-}
+  }
 
 
   return (

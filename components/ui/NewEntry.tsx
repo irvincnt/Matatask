@@ -8,7 +8,7 @@ import { EntriesContext } from "../../context/entries";
 import { UIContext } from "../../context/ui";
 
 export const NewEntry = () => {
-  // const { addNewEntry } = useContext(EntriesContext);
+  const { addNewEntry } = useContext(EntriesContext);
   const { isAddingEntry, setIsAddingEntry } = useContext(UIContext);
 
   const [inputValue, setInputValue] = useState("");
@@ -20,8 +20,7 @@ export const NewEntry = () => {
 
   const onSave = () => {
     if (inputValue.length === 0) return;
-
-    // addNewEntry(inputValue);
+    addNewEntry(inputValue);
     setIsAddingEntry(false);
     setTouched(false);
     setInputValue("");

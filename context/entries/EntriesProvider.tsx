@@ -37,7 +37,7 @@ const Entries_INITIAL_STATE: EntriesState = {
   },
   {
     _id: Date.now() * 5,
-    description: 'finished - Magna ullamco tempor minim nostrud nostrud consequat deserunt ea dolor.',
+    description: 'finished - MagnsdfgasdrfASERa ullamco tempor minim nostrud nostrud consequat deserunt ea dolor.',
     status: 'finished',
     createAt: Date.now()
   }],

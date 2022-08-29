@@ -1,5 +1,6 @@
 import { FC, useReducer } from 'react';
 import { Entry } from '../../interfaces';
+import { uuid } from '../../utils';
 import { EntriesContext, EntriesReducer } from './';
 
 export interface EntriesState {
@@ -12,31 +13,31 @@ export interface Props {
 
 const Entries_INITIAL_STATE: EntriesState = {
   entries: [{
-    _id: Date.now() * 1,
+    _id: uuid(),
     description: 'pending - Aliquip mollit consectetur cillum ad elit officia excepteur qui velit nostrud id esse laboris occaecat.',
     status: 'pending',
     createAt: Date.now()
   },
   {
-    _id: Date.now() * 2,
+    _id: uuid(),
     description: 'in-progress - Quis sint consequat culpa minim.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: Date.now() * 3,
+    _id: uuid(),
     description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: Date.now() * 4,
+    _id: uuid(),
     description: 'in-progress - Laboris commodo aliquip fugiat et in culpa culpa pariatur dolore laboris culpa irure officia est.',
     status: 'in-progress',
     createAt: Date.now()
   },
   {
-    _id: Date.now() * 5,
+    _id: uuid(),
     description: 'finished - MagnsdfgasdrfASERa ullamco tempor minim nostrud nostrud consequat deserunt ea dolor.',
     status: 'finished',
     createAt: Date.now()
@@ -48,7 +49,7 @@ export const EntriesProvider:FC<Props> = ({ children }) => {
 
   const addNewEntry = ( description: string ) => {
     const newEntry:Entry = {
-      _id: Date.now(),
+      _id: uuid(),
       description,
       status: 'pending',
       createAt: Date.now()
@@ -57,11 +58,16 @@ export const EntriesProvider:FC<Props> = ({ children }) => {
     dispatch({type:'[Entries] - New entry', payload: newEntry });
   }
 
+  const updatedEntry = (entry: Entry) => {
+    dispatch({type: '[Entries] - Updated entry', payload: entry})
+  }
+
   return (
     <EntriesContext.Provider
       value={{
         ...state,
-        addNewEntry
+        addNewEntry,
+        updatedEntry
       }}
     >
       {children}
